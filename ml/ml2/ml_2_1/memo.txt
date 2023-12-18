@@ -1,0 +1,111 @@
+1) What are the necessary preprocessing steps regarding:
+a) classes ?
+	    Check for Class Imbalance:
+        	Examine the distribution of classes in the 'target' variable. 
+		If there is a significant imbalance, consider techniques to address it, 
+		such as oversampling the minority class or undersampling the majority class. 
+		Imbalanced classes can lead to biased models.
+        
+b) categorical features ? 
+	    Encoding Categorical Variables:
+       		Convert categorical variables into a numerical format using techniques like one-hot encoding or label encoding. 
+		This is crucial because many machine learning algorithms, 
+		including k-nearest neighbors (KNN), require numerical input.
+
+    	    Handle Ordinal Categorical Features (if any):
+        	If you have ordinal categorical features (categories with a meaningful order), 
+		consider mapping them to appropriate numerical values. 
+		For example, if 'slope' has an order (0=upsloping, 1=flat, 2=downsloping), you might want to preserve that order.
+		
+
+c) continuous features ?
+	    Scaling:
+        	Scale continuous features to bring them to a similar scale. 
+		This is important for distance-based algorithms like KNN. 
+		Common scaling methods include Min-Max scaling or Standardization (z-score normalization). 
+		Use the StandardScaler or MinMaxScaler from scikit-learn.
+
+    	    Handling Outliers:
+      		Identify and handle outliers in continuous features. 
+		Outliers can have a significant impact on distance-based algorithms. 
+		You may choose to remove outliers or transform them based on the nature of your data.
+
+    	    Handling Missing Values:
+        	Check for missing values in continuous features. 
+		Depending on the amount of missing data, you can impute missing values using mean, median, 
+		or other appropriate strategies. 
+		It's essential to address missing values before training your model.
+
+    	    Feature Engineering (if needed):
+     		Create new features based on domain knowledge or the relationships between existing features. 
+		Feature engineering can improve the model's ability to capture patterns in the data.
+
+    	    Normalization (if needed):
+        	Normalize features if your algorithm assumes a certain distribution, or if normalization improves model performance. 
+		This step is especially important for algorithms sensitive to the scale of variables.
+
+2) Confusion matrix:
+a)How many patient were incorrectly diagnosed with a Heart disease (false positives) ? 5
+
+b)How many patient were incorrectly diagnosed as being Healthy (false negatives)? 12
+
+
+3) Changing the threshold:
+a)What is the precision if we change the threshold to have a 0.95 recall ? 
+
+b) How many patient were incorrectly diagnosed as being Healthy (false negatives)?
+
+
+
+4) Choosing an overall metric:
+
+
+a) If I can compute my test sample probabilities and care more about the positive class, which overall metric should I use to compare classifiers ? 
+	    Precision: Precision is the number of true positive predictions divided by the total number of positive predictions (true positives + false positives). 
+	    	It provides a measure of how many of the predicted positive instances are actually positive.
+
+    		Precision=True PositivesTrue Positives + False PositivesPrecision=True Positives + False PositivesTrue Positives​
+
+    		Recall (Sensitivity or True Positive Rate): Recall is the number of true positive predictions divided by the total number of actual positive instances 
+    		(true positives + false negatives). It represents the ability of the classifier to capture all positive instances.
+
+   		 Recall=True PositivesTrue Positives + False NegativesRecall=True Positives + False NegativesTrue Positives​
+
+    		F1 Score: The F1 score is the harmonic mean of precision and recall. 
+    			It provides a balance between precision and recall and is especially useful when there is an imbalance between 	classes.
+
+    		F1=2×Precision×RecallPrecision + RecallF1=2×Precision + RecallPrecision×Recall​
+
+    		Area Under the Precision-Recall Curve (AUC-PR): This metric considers the trade-off between precision and recall across different 
+    		probability thresholds and provides a summarized performance measure.
+b) And if I only have the class predictions and no probabilities ?
+
+		If you only have class predictions (i.e., binary outcomes without associated probabilities), you can still use metrics that focus on the positive class. In this case, you can consider the following metrics:
+
+    Precision: Precision is still applicable when you only have class predictions. It measures the accuracy of positive predictions among all instances predicted as positive.
+
+    Precision=True PositivesTrue Positives + False PositivesPrecision=True Positives + False PositivesTrue Positives​
+
+    Recall (Sensitivity or True Positive Rate): Recall remains relevant without probabilities. It measures the ability of the classifier to capture all actual positive instances.
+
+    Recall=True PositivesTrue Positives + False NegativesRecall=True Positives + False NegativesTrue Positives​
+
+    F1 Score: You can still calculate the F1 score based on precision and recall even if you only have class predictions.
+
+    F1=2×Precision×RecallPrecision + RecallF1=2×Precision + RecallPrecision×Recall​
+
+If you have imbalanced classes or a specific preference for precision or recall based on the application, these metrics can help you evaluate the performance of your classifiers. Choose the metric that aligns with your goals and the importance of correctly predicting positive instances in your specific context.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
