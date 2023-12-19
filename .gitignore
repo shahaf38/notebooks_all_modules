@@ -12,7 +12,11 @@ ml/ml2/ml_2_3/*.pkl
 ml/ml3/*.csv
 ml/ml4/*.csv
 ml/ml5/*.csv
+ml/ml5/j3/butterflies/test/
+ml/ml5/j3/butterflies/train/
+ml/ml5/j3/butterflies/*.csv
 stat/data_rte/
 stat/*.pkl
 stat/stat_test_hypotese/*.txt
 stat/stat_test_hypotese/*.wav
+
