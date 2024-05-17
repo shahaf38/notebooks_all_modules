@@ -1,0 +1,14 @@
+Recommendations for User 1:
+
+Streetcar Named Desire, A (1951): 5.51
+Shawshank Redemption, The (1994): 5.45
+Hoop Dreams (1994): 5.42
+Dr. Strangelove or: How I Learned to Stop Worrying and Love the Bomb (1964): 5.39
+Guess Who's Coming to Dinner (1967): 5.38
+Frances (1982): 2.35
+Texas Chainsaw Massacre 2, The (1986): 2.26
+Mortuary (1983): 0.60
+Imperium (2016): 0.60
+Conan the Barbarian (2011): 0.60
+
+Variety Increase: 10

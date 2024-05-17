@@ -1,0 +1,14 @@
+Recommendations for User 5:
+
+Forrest Gump (1994): 4.13
+Silence of the Lambs, The (1991): 4.00
+Hoop Dreams (1994): 3.94
+Star Wars: Episode IV - A New Hope (1977): 3.85
+Matrix, The (1999): 3.77
+Motorcycle Diaries, The (Diarios de motocicleta) (2004): 3.18
+Cold Mountain (2003): 2.84
+Scary Movie 4 (2006): 0.38
+This Is My Father (1998): 0.38
+Bay, The (2012): 0.38
+
+Variety Increase: 10
