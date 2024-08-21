@@ -97,7 +97,52 @@ b) And if I only have the class predictions and no probabilities ?
 If you have imbalanced classes or a specific preference for precision or recall based on the application, these metrics can help you evaluate the performance of your classifiers. Choose the metric that aligns with your goals and the importance of correctly predicting positive instances in your specific context.
 
 
+### Introduction au Bagging et au Boosting
 
+**Bagging (Bootstrap Aggregating)** et **Boosting** sont deux techniques d'ensemble très populaires en apprentissage automatique, utilisées pour améliorer la performance des modèles de classification en combinant plusieurs modèles de base. Bien qu'elles partagent l'objectif d'améliorer la précision des prédictions, elles diffèrent par leur approche et leur méthodologie.
+
+### Bagging : Définition et Fonctionnement
+
+**Définition :** Le **Bagging** est une méthode d'ensemble qui consiste à entraîner plusieurs modèles sur différentes sous-ensembles aléatoires du jeu de données original, puis à agréger leurs prédictions pour obtenir une meilleure performance globale.
+
+**Fonctionnement :**
+1. **Échantillonnage Bootstrap :** On tire plusieurs échantillons aléatoires avec remplacement à partir du jeu de données d'origine pour créer plusieurs sous-ensembles. Chaque modèle est entraîné sur un échantillon bootstrap différent.
+2. **Modèles Indépendants :** Chaque sous-modèle est indépendant des autres, ce qui réduit la variance globale du modèle d'ensemble.
+3. **Agrégation :** Pour les tâches de classification, les prédictions sont généralement combinées par un vote majoritaire (la classe prédite par la majorité des modèles est choisie comme prédiction finale).
+
+**Exemples de Modèles Utilisant le Bagging :**
+- **Random Forests :** Un exemple classique de bagging, où des arbres de décision sont combinés pour améliorer la robustesse et la précision.
+
+### Boosting : Définition et Fonctionnement
+
+**Définition :** Le **Boosting** est une technique d'ensemble qui entraîne séquentiellement des modèles, en mettant l'accent sur les erreurs commises par les modèles précédents, afin de corriger les erreurs et d'améliorer la performance globale.
+
+**Fonctionnement :**
+1. **Apprentissage Séquentiel :** Les modèles sont entraînés les uns après les autres. Chaque modèle tente de corriger les erreurs des modèles précédents en se concentrant sur les exemples mal classés.
+2. **Poids des Observations :** Au fur et à mesure que de nouveaux modèles sont entraînés, un poids plus élevé est attribué aux observations mal classées, ce qui les rend plus importantes pour les modèles suivants.
+3. **Combinaison Pondérée :** Les prédictions finales sont une combinaison pondérée des prédictions de tous les modèles, où les modèles ayant une meilleure performance globale reçoivent un poids plus élevé.
+
+**Exemples de Modèles Utilisant le Boosting :**
+- **AdaBoost :** Un des premiers algorithmes de boosting, qui ajuste les poids des observations mal classées à chaque itération.
+- **Gradient Boosting Machines (GBM) :** Utilise la descente de gradient pour minimiser les erreurs, en ajustant le modèle en fonction des erreurs résiduelles.
+
+### Différences Clés entre Bagging et Boosting
+
+1. **Approche de l’Entraînement :**
+   - **Bagging :** Les modèles sont entraînés indépendamment les uns des autres sur des échantillons bootstrap, ce qui réduit la variance mais n'aborde pas le biais.
+   - **Boosting :** Les modèles sont entraînés séquentiellement, chaque nouveau modèle corrigeant les erreurs du précédent, ce qui réduit à la fois le biais et la variance.
+
+2. **Gestion des Erreurs :**
+   - **Bagging :** Chaque modèle a la même importance, et les erreurs sont lissées par l'agrégation.
+   - **Boosting :** Les erreurs sont traitées directement, avec une attention accrue aux erreurs passées.
+
+3. **Robustesse aux Outliers :**
+   - **Bagging :** Moins sensible aux outliers, car chaque modèle peut être entraîné sur des sous-ensembles différents.
+   - **Boosting :** Plus sensible aux outliers, car ces derniers peuvent recevoir des poids plus élevés au fur et à mesure des itérations.
+
+### Conclusion
+
+Le choix entre Bagging et Boosting dépend de la nature des données et des besoins spécifiques du problème de classification. Le Bagging est plus adapté pour réduire la variance, tandis que le Boosting est souvent préféré pour améliorer la précision en réduisant à la fois le biais et la variance. Les deux techniques sont puissantes et peuvent être utilisées en fonction des contraintes et des objectifs du modèle.
 
 
 
